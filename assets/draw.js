@@ -12,6 +12,7 @@
             let canvas = createCanvas(400, 400);
             canvas.parent('p5Canvas');
             strokeWeight(3);
+            fill(200,15,50);
         }
 
         function draw() {
