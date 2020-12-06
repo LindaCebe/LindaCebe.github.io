@@ -3,7 +3,8 @@ let b = [];
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+    let canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('p5Canvas');
   
 }
 
