@@ -9,7 +9,7 @@
         let words = [1, 2, 3, 4];
 
         function setup() {
-            let canvas = createCanvas(windowWidth, windowHeight);
+            let canvas = createCanvas(400, 400);
             canvas.parent('p5Canvas');
             strokeWeight(3);
         }
