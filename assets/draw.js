@@ -1,41 +1,28 @@
+let a = [];
+let b = [];
 
-        var r = 2;
-        var posX = 200,
-        posY = 200;
 
-        var prevPosY = 200;
-        var prevPosX = 200;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  
+}
 
-        let words = [1, 2, 3, 4];
-
-        function setup() {
-            let canvas = createCanvas(400, 400);
-            canvas.parent('p5Canvas');
-            strokeWeight(3);
-            
-        }
-
-        function draw() {
-            fill(200,15,50);
-            frameRate(15);
-            r = random(words);
-            //up
-            if (r == 1) {
-                posY+=10;
-            }
-            //down
-            if (r == 2) {
-                posY-=10;
-            }
-            //left
-            if (r == 3) {
-                posX-=10;
-            }
-            //right
-            if (r == 4) {
-                posX+=10;
-            }
-            line(prevPosX,prevPosY,posX,posY);
-            prevPosX = posX;
-            prevPosY = posY;
-        }
+function draw() {
+  background(220);
+  if(mouseX != pmouseX){
+    a.push(mouseX);
+    b.push(mouseY);
+  }
+  
+  for(var i = 1; i < a.length+1; i++){
+    fill(0,0,0,i);
+    line(a[i-1],b[i-1],a[i],b[i]); 
+    
+  }
+  
+  if(a.length>100){
+    a.shift();
+    b.shift();
+  }
+  
+}
